@@ -1,0 +1,25 @@
+<div class="main-container" fxLayout="row" fxLayoutGap="10px">
+  <!-- Historial de búsqueda a la izquierda -->
+  <div class="history-container" fxFlex="20%">
+    <h3>Historial de búsquedas</h3>
+    <ul>
+      <li *ngFor="let item of searchHistory" (click)="searchGifs(item)">
+        {{ item }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Contenedor de búsqueda y resultados -->
+  <div class="content-container" fxFlex="80%">
+    <div class="search-container">
+      <input type="text" placeholder="Buscar gifs..." [(ngModel)]="query" (keyup.enter)="searchGifs(query)" />
+      <button (click)="searchGifs(query)">Buscar</button>
+    </div>
+
+    <div class="gif-grid" fxLayout="row" fxLayoutGap="10px" fxLayoutWrap>
+      <div fxFlex="25%" fxFlex.xs="100%" *ngFor="let gif of gifs">
+        <img [src]="gif.images.fixed_height.url" alt="gif" />
+      </div>
+    </div>
+  </div>
+</div>

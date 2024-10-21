@@ -1,0 +1,86 @@
+/* Contenedor principal con flexbox */
+.main-container {
+  display: flex;
+  padding: 20px;
+}
+
+/* Historial de búsqueda a la izquierda */
+.history-container {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 8px;
+  width: 20%; /* Historial ocupará el 20% del ancho de la pantalla */
+  margin-right: 20px; /* Separación entre el historial y el buscador */
+}
+
+/* Estilos del listado de historial */
+.history-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.history-container li {
+  cursor: pointer;
+  padding: 8px;
+  margin-bottom: 5px;
+  background-color: #ddd;
+  border-radius: 4px;
+}
+
+.history-container li:hover {
+  background-color: #ccc;
+}
+
+/* Contenedor del buscador y resultados */
+.content-container {
+  width: 80%; /* La parte derecha ocupará el 80% del ancho de la pantalla */
+}
+
+/* Estilo para las imágenes de los GIFs */
+.gif-grid img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Buscador con elementos centrados */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-container input {
+  width: 300px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.search-container button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Cuadrícula de los GIFs */
+.gif-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Adaptación para pantallas móviles */
+@media (max-width: 768px) {
+  .gif-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gif-grid img {
+  width: 100%;
+  border-radius: 10px;
+}
